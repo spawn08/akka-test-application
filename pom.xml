@@ -71,7 +71,7 @@
                     <arguments>
                         <argument>-classpath</argument>
                         <classpath />
-                        <argument>AkkaTest</argument>
+                        <argument>com.app.routes.AkkaTest</argument>
                     </arguments>
                 </configuration>
             </plugin>
