@@ -2,16 +2,15 @@ package com.app.utils;
 
 import com.app.model.Response;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
-
 public final class Utils {
 
-    public static Response getResponse(String token) {
-        return new Response(token, 1234);
+    public static final String AUTH_TOKEN = "Y2xpY2tzdHJlYW1hZ2c6b2ZRVUlEZyE2YTkmKmslQ1MlZEl3TURCKllGdTFkaTIwYVd4WXNJWA==";
+
+    public static Response getResponse(String status) {
+        return new Response(status);
     }
 
-    public static CompletionStage<String> getAuth(String auth) {
-        return CompletableFuture.completedFuture(auth.replace("Basic ", ""));
+    public static String getAuth(String auth) {
+        return auth.replace("Basic ", "");
     }
 }

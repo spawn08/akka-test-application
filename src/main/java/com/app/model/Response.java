@@ -5,21 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Response {
 
-    final String name;
-    final long id;
+    final String status;
 
     @JsonCreator
-    public Response(@JsonProperty("name") String name,
-             @JsonProperty("id") long id) {
-        this.name = name;
-        this.id = id;
+    public Response(@JsonProperty("name") String status) {
+        this.status = status;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public long getId() {
-        return id;
+    public String getStatus() {
+        return status;
     }
 }
