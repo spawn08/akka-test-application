@@ -30,7 +30,7 @@ public class KafkaService {
     public CompletionStage<String> pushLogs(EventBody eventBody) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            kafkaProducer.send(new ProducerRecord<>("MINIAPP", objectMapper.writeValueAsString(eventBody)));
+            kafkaProducer.send(new ProducerRecord<>(eventBody.getType(), objectMapper.writeValueAsString(eventBody)));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
