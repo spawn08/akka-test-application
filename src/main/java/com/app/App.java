@@ -17,10 +17,9 @@ public class App {
         final Http http = Http.get(system);
         KafkaService kafkaService = new KafkaService(system);
         final CompletionStage<ServerBinding> binding =
-                http.newServerAt("localhost", 8080)
+                http.newServerAt("0.0.0.0", 7890)
                         .bind(AkkaTest.createRoute(kafkaService));
-        new KafkaService(system);
-        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.out.println("Server online at http://localhost:7890/\nPress RETURN to stop...");
         System.in.read(); // let it run until user presses return
 
         binding
